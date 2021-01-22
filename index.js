@@ -239,7 +239,11 @@ console.log(artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-console.log((artists[8].name = 'Vincent Van Gogh'));
+// ########################################################################
+// ## Below is commented out due to it breaking the test code for Task:7 ##
+// ########################################################################
+
+// console.log((artists[8].name = 'Vincent Van Gogh'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
  Use getArtistByIndex to do the following:
@@ -323,9 +327,19 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-	/*Your Code Here*/
+function lotsOfArt(array) {
+	const paintings = [];
+
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].paintings > 100) {
+			paintings.push(array[i].name);
+		}
+	}
+
+	return paintings;
 }
+
+console.log(lotsOfArt(artists));
 
 // 🎨🎨 STRETCH 🎨🎨//
 /* 💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪 
