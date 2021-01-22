@@ -269,11 +269,16 @@ function get20s(array) {
 	const century = [];
 
 	for (let i = 0; i < array.length; i++) {
-		if (array[i].years.includes('1900') && array.years.find('2000')) {
-			return array[i].name;
-			// centrury.push
+		const str = array[i].years;
+		const pos1 = str[0] + str[1] + str[2] + str[3];
+		const pos2 = str[7] + str[8] + str[9] + str[10];
+
+		if (pos1 >= 1900 && pos2 <= 2000) {
+			century.push(array[i].name);
 		}
 	}
+
+	return century;
 }
 // #########################################################################
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
